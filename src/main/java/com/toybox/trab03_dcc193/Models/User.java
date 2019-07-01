@@ -1,4 +1,4 @@
-package com.toybox.trab03_dcc193.Models;
+package com.toybox.trab03_dcc193.models;
 
 /**
  * User
