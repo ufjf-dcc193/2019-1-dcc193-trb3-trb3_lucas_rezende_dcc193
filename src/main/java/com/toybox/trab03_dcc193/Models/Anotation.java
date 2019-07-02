@@ -5,6 +5,7 @@ package com.toybox.trab03_dcc193.models;
  */
 public class Anotation {
 
+    private int id;
     private String titulo;
     private String descricao;
     private String url;
@@ -19,6 +20,13 @@ public class Anotation {
      */
     public String getDescricao() {
         return descricao;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
     }
 
     /**
@@ -68,6 +76,13 @@ public class Anotation {
      */
     public void setUsuario(User usuario) {
         this.usuario = usuario;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

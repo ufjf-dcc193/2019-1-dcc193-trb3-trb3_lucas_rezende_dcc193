@@ -5,6 +5,7 @@ package com.toybox.trab03_dcc193.models;
  */
 public class User {
 
+    private int id;
     private String nome;
     private String codigo;
     private String descricao;
@@ -19,6 +20,13 @@ public class User {
      */
     public String getCodigo() {
         return codigo;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
     }
 
     /**
@@ -68,5 +76,12 @@ public class User {
      */
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }

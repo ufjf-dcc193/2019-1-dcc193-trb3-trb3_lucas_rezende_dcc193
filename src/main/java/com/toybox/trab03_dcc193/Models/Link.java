@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class Link {
 
+    private int id;
     private Item origem;
     private Item destino;
     private List<Tag> etiquetas;
@@ -21,6 +22,13 @@ public class Link {
      */
     public List<Anotation> getAnotacoes() {
         return anotacoes;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
     }
 
     /**
@@ -70,5 +78,12 @@ public class Link {
      */
     public void setOrigem(Item origem) {
         this.origem = origem;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }

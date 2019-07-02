@@ -1,0 +1,62 @@
+<div th:replace="fragments/cabecalho :: cabecalho"></div>
+<!---cabeçalho----->
+
+<div>
+    <h4 th:text="${teste}"></h4>
+    <h4>Itens Cadastrados!</h4>
+    <a class="btn btn-primary text-center" th:href= "@{itens/cadastrar_item}">Cadastrar Novo Item</a>
+</div>
+<br>
+
+<div th:if="${#lists.size(itens) == 0}" class="text-center">
+        <span>desculpe, Não há Itens cadastrados!!!</span>
+</div>
+
+<div th:if="${#lists.size(itens) != 0}" class="text-center">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <div colspan="2"> 
+                    <th>ID</th>
+                </div> 
+                <div colspan="2">   
+                    <th>Titulo</th>
+                </div > 
+                <div colspan="2"> 
+                    <th>Anotations</th>
+                </div> 
+                <div colspan="2"> 
+                    <th>Tags</th>
+                </div > 
+                <div colspan="2"> 
+                    <th>Links</th>
+                </div> 
+                <div colspan="2"> 
+                    <th>Opções</th>
+                </div>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item: ${itens}" th:object="${item}">
+                <td th:text="*{id}"></td>
+                <td th:text="*{titulo}"></td>
+                <!----Anotation--->
+                <td><a class="btn btn-primary" th:href= "@{anotations/ver_anotation/{id}(id = *{id})}">Ver Anotation</a></td>
+                <!----Tag--------->
+                <td><a class="btn btn-primary" th:href= "@{./get_itens_tags/{id}(id = *{id})}">Ver Tag</a></td>
+                <!----Link-------->
+                <td><a class="btn btn-primary" th:href= "@{links/ver_link/{id}(id = *{id})}">Ver Link</a></td>
+                <!----aditar/excluir--->
+                <td colspan="2">
+                        <a class="btn btn-primary" th:href= "@{./editar_item/{id}(id = *{id})}">Editar</a>
+                        <a class="btn btn-danger" th:href= "@{./excluir_item/{id}(id = *{id})}">Excluir</a>
+                    </td>
+            </tr>
+            </tbody>
+    </table>
+ </div>
+    
+    
+
+<!---rodapé----->
+<div th:replace="fragments/rodape :: rodape"></div>

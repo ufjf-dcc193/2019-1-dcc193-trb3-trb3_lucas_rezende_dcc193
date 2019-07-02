@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class Item {
 
+    private int id;
     private String titulo;
     private List<Anotation> anotaçoes;
     private List<Tag> etiquetas;
@@ -21,6 +22,13 @@ public class Item {
      */
     public List<Anotation> getAnotaçoes() {
         return anotaçoes;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
     }
 
     /**
@@ -70,5 +78,12 @@ public class Item {
      */
     public void setVinculos(List<Link> vinculos) {
         this.vinculos = vinculos;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -1,0 +1,41 @@
+<div th:replace="fragments/cabecalho :: cabecalho"></div>
+<!---cabeçalho----->
+
+<div>
+    <h4>tag Cadastrados</h4>
+    <a class="btn btn-primary text-center" th:href= "@{tags/cadastrar_tag}">Cadastrar Novo Tag</a>
+</div>
+<br>
+
+<div th:if="${#lists.size(tags) == 0}" class="text-center">
+        <span>desculpe, Não há Tags cadastrados!!!</span>
+</div>
+
+<div th:if="${#lists.size(tags) != 0}" class="text-center">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th> 
+                <th>Titulo</th>
+                <th>Descrição</th>
+                <th>URL</th>                    
+                <th>Opções</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tag: ${tags}" th:object="${tag}">
+                <td th:text="*{id}"></td>
+                <td th:text="*{titulo}"></td>
+                <td th:text="*{descricao}"></td>
+                <td th:href="@{url}"></td>
+                <td colspan="2">
+                        <a class="btn btn-primary" th:href= "@{./editar_tag/{id}(id = *{id})}">Editar</a>
+                        <a class="btn btn-danger" th:href= "@{./excluir_tag/{id}(id = *{id})}">Excluir</a>
+                    </td>
+            </tr>
+            </tbody>
+    </table>
+ </div>
+    
+<!---rodapé----->
+<div th:replace="fragments/rodape :: rodape"></div>

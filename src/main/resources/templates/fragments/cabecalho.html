@@ -12,22 +12,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/avaliadores/}">Avaliadores</a>
+                        <a class="nav-link" th:href="@{/itens}">Itens</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/trabalhos/}">Trabalhos</a>
-                    </li>
-                    <li th:if="${login} != 0" class="nav-item">
-                        <a class="nav-link" th:href="@{/areas/minhas-areas}">Minhas Areas</a>
-                    </li>
-                    <li th:if="${login} != 0" class="nav-item">
-                        <a class="nav-link" th:href="@{/revisao/por-avaliador/{id}(id = ${login})}">Revisões por Avaliador</a>
-                    </li>
-                    <li th:if="${login} == 0" class="nav-item mr-sm-2">
-                        <a class="nav-link" th:href="@{/login/}">Logar</a>
-                    </li>
-                    <li th:if="${login} != 0" class="nav-item mr-sm-2">
-                        <a class="nav-link" th:href="@{/login/sair}">Sair</a>
+                            <a class="nav-link" th:href="@{/tags}">Tags</a>
                     </li>
                 </ul>
             </div>

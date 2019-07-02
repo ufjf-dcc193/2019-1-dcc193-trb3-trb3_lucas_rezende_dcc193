@@ -5,6 +5,7 @@ package com.toybox.trab03_dcc193.models;
  */
 public class Tag {
 
+    private int id;
     private String titulo;
     private String descricao;
     private String url;
@@ -18,6 +19,13 @@ public class Tag {
      */
     public String getDescricao() {
         return descricao;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
     }
 
     /**
@@ -53,5 +61,12 @@ public class Tag {
      */
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }
